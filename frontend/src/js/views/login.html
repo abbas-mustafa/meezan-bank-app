@@ -1,0 +1,40 @@
+<div class="background">
+    <img src="css/images/meezan-logo.png" alt="Meezan Bank Logo" class="bank-logo">
+    <div class="login-box">
+      <div class="login-left">
+        <h2>Login</h2>
+      </div>
+      <div class="login-right">
+        <form data-bind="submit: login">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter Username"
+              autocomplete="username"
+            data-bind="value: username">
+
+          <div class="remember">
+            <input type="checkbox" id="remember" data-bind="checked: rememberMe">
+            <label for="remember">Remember me</label>
+          </div>
+
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input id="password" placeholder="Enter Password" type="password"
+                autocomplete="current-password"
+              data-bind="value: password, attr: { type: passwordFieldType }">
+            <span id="togglePassword" data-bind="text: passwordToggleText, click: togglePassword"></span>
+          </div>
+
+          <a href="#" class="forgot" data-bind="click: navigateToForgot">Forgot Login Details?</a>
+
+          <div class="buttons">
+            <button type="button" class="register" data-bind="click: register">Register</button>
+            <button type="submit" class="login" data-bind="enable: isFormValid">Login</button>
+            <p class="register-info">
+              Click Register to register existing account, open a new <br>
+              bank account or Request for a Roshan Digital Account.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

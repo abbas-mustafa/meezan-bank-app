@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body, html {
+  height: 100%;
+}
+.background {
+  background: 
+    linear-gradient(rgba(109, 29, 124, 0.8), rgba(109, 29, 124, 0.8)),
+    url("/css/images/head-office.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.bank-logo {
+  width: 250px;
+  height: auto;
+  margin-bottom: 30px;
+  display: block;
+}
+.login-box {
+  background: white;
+  width: 95%;
+  height: 550px;
+  max-width: 1000px;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  gap: 20px;
+}
+.login-left {
+  flex: 1;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+.login-left h2 {
+  font-size: 40px;
+  color: #6d1d7c;
+  margin-bottom: 0px;
+}
+.login-right {
+  flex: 2;
+  padding: 40px;
+}
+.login-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.login-right label {
+  font-size: 14px;
+  color: #333;
+}
+.login-right input[type="text"],
+.login-right input[type="password"],
+.login-right .password-wrapper input {
+  width: 10% !important;
+  padding: 12px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 5px !important;
+  font-size: 14px !important;
+  box-sizing: border-box !important;
+  display: block !important;
+}
+.password-wrapper {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  border: 0px solid #ccc !important;
+}
+.password-wrapper input {
+  padding-right: 60px !important;
+}
+.password-wrapper span {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6d1d7c;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+  pointer-events: auto;
+  background: white;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.password-wrapper span:hover {
+  background-color: #f0f0f0;
+  color: #551463;
+}
+
+#username,
+#password {
+  width: 100% !important;
+  padding: 12px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 5px !important;
+  font-size: 14px !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  margin: 0 !important;
+}
+
+#password {
+  padding-right: 60px !important;
+}
+
+
+.remember {
+  margin-top: 0px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.forgot {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #6d1d7c;
+  font-weight: bold;
+  text-decoration: underline;
+  align-self: flex-start;
+}
+.forgot:hover {
+  text-decoration: underline;
+}
+.buttons {
+  display: flex;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+button {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 0px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.5s;
+}
+.register {
+  background: #f0f0f0;
+  color: #6d1d7c;
+}
+.register:hover {
+  background: #bbb;
+}
+.register-info {
+  margin-top: 4px;
+  font-size: 15px;
+  color: #333;
+  text-align: left;
+  line-height: default;
+  margin-bottom: 0px;
+  margin-top: 15px;
+}
+.login {
+  background: #6d1d7c;
+  color: white;
+}
+.login:hover {
+  background-color: #551463;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media screen and (max-width: 768px) {
+  .background {
+    padding: 10px;
+  }
+  
+  .bank-logo {
+    width: 180px;
+    margin-bottom: 20px;
+  }
+  
+  .login-box {
+    width: 100%;
+    height: auto;
+    padding: 30px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .login-left {
+    padding-top: 0;
+    align-items: center;
+  }
+  
+  .login-left h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+  
+  .login-right {
+    padding: 20px 0;
+  }
+  
+  .buttons {
+    flex-direction: column;
+  }
+  
+  button {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bank-logo {
+    width: 150px;
+    margin-bottom: 15px;
+  }
+  
+  .login-box {
+    padding: 20px 15px;
+  }
+  
+  .login-left h2 {
+    font-size: 28px;
+  }
+  
+  .login-right input[type="text"],
+  .login-right input[type="password"],
+  .password-wrapper input,
+  #username,
+  #password {
+    padding: 10px !important;
+    font-size: 16px !important;
+  }
+  
+  #password {
+    padding-right: 50px !important;
+  }
+  
+  .password-wrapper span {
+    right: 12px;
+    font-size: 11px;
+  }
+  
+  .login-right label {
+    font-size: 13px;
+  }
+  
+  button {
+    padding: 12px 0;
+  }
+  
+  .register-info {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .background {
+    padding: 8px;
+  }
+  
+  .bank-logo {
+    width: 130px;
+  }
+  
+  .login-box {
+    padding: 15px 10px;
+  }
+  
+  .login-left h2 {
+    font-size: 24px;
+  }
+}

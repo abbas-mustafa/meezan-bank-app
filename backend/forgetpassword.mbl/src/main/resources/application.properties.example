@@ -1,0 +1,51 @@
+# Spring Boot Application Configuration
+spring.application.name=forgetpassword.mbl
+server.port=8080
+
+# ===============================================
+# DATABASE CONNECTION (Replace with your own)
+# ===============================================
+spring.datasource.url=jdbc:postgresql://localhost:5432/your_database_name
+spring.datasource.username=your_db_username
+spring.datasource.password=YOUR_DB_PASSWORD
+
+# ===============================================
+# JPA & HIBERNATE CONFIGURATION
+# ===============================================
+# Use 'update' for development to automatically update schema. Use 'validate' or 'none' in production.
+spring.jpa.hibernate.ddl-auto=update
+# Show SQL queries in the console for debugging
+spring.jpa.show-sql=true
+# Disables the "Open Session in View" pattern, which is a best practice for REST APIs.
+spring.jpa.open-in-view=false
+
+# ===============================================
+# DEVELOPMENT & DEBUGGING
+# ===============================================
+# Port for Spring DevTools live reload feature
+spring.devtools.livereload.port=35730
+# Pretty-print JSON responses for better readability in development
+spring.jackson.serialization.indent_output=true
+
+# ===============================================
+# IN-MEMORY SECURITY (For Development Only)
+# ===============================================
+# These are used if the SecurityConfig's InMemoryUserDetailsManager is commented out.
+spring.security.user.name=devuser
+spring.security.user.password=devpass
+
+# ===============================================
+# APPLICATION-SPECIFIC SECURITY PROPERTIES
+# ===============================================
+# Feature flag to enable/disable client-side password encryption.
+app.security.client-side-encryption-enabled=true
+
+# --- RSA KEYS (Paste your generated keys here) ---
+# The public key is used on the frontend to encrypt passwords.
+app.security.rsa.public-key=-----BEGIN PUBLIC KEY-----
+PASTE_YOUR_PUBLIC_KEY_CONTENT_HERE
+-----END PUBLIC KEY-----
+
+# The private key is used on the backend to decrypt passwords.
+# KEEP THIS SECRET. DO NOT COMMIT THE REAL KEY.
+app.security.rsa.private-key=PASTE_YOUR_SINGLE_LINE_BASE64_PRIVATE_KEY_HERE
