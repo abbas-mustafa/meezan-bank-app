@@ -110,20 +110,34 @@ define(['knockout', 'ojs/ojcontext', 'ojs/ojcorerouter', 'jsencrypt', 'config'],
 
       self.passwordStrength = ko.computed(function() {
         const val = self.newPassword();
-        let strength = 0;
-        if (val.length > 0) strength = 1;
+        const len = val.length;
+    
+        if (len === 0) {
+            return 0;
+        }
+        
         const hasNumbers = /[0-9]/.test(val);
         const hasLetters = /[a-zA-Z]/.test(val);
         const hasSpecial = /[^a-zA-Z0-9]/.test(val);
-
-        if (val.length >= 8 && hasNumbers && hasLetters) strength = 3;
-        else if (val.length >= 6) strength = 2;
-
-        if (val.length >= 8 && hasNumbers && hasLetters && hasSpecial) strength = 4;
-        if (strength === 4 && val.length >= 12) strength = 5;
-
-        return strength;
-      });
+    
+        if (len >= 12 && hasNumbers && hasLetters && hasSpecial) {
+            return 5;
+        }
+        
+        if (len >= 8 && hasNumbers && hasLetters && hasSpecial) {
+            return 4;
+        }
+        
+        if (len >= 8 && hasNumbers && hasLetters) {
+            return 3;
+        }
+        
+        if (len >= 6) {
+            return 2;
+        }
+    
+        return 1;
+    });
 
       self.passwordStrengthText = ko.computed(() => ["", "Weak", "Easy", "Medium", "Strong", "Very Strong"][self.passwordStrength()] || "");
       self.passwordStrengthColor = ko.computed(() => ["", "red", "orange", "goldenrod", "green", "#0b7a0b"][self.passwordStrength()] || "");
