@@ -27,7 +27,7 @@ public class AccountResponseDTO {
                 .iban(entity.getIban())
                 .accountTitle(entity.getAccountTitle())
                 .status(entity.getStatus())
-                .userCnicNo(entity.getUser().getCnicNo()) // Extracts just the CNIC
+                .userCnicNo(entity.getUser().getCnicNo())
                 .build();
     }
 }

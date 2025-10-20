@@ -11,7 +11,6 @@ public class UserRegistrationRequestDTO {
     @NotBlank(message = "Name is required.")
     private String name;
 
-    // MODIFIED: Validation now expects a plain 13-digit string.
     @NotBlank(message = "CNIC is required.")
     @Pattern(regexp = "^\\d{13}$", message = "CNIC must be exactly 13 digits.")
     private String cnicNo;
